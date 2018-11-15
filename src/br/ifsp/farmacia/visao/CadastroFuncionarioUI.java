@@ -21,7 +21,7 @@ public class CadastroFuncionarioUI {
 	private JTextField txtNome;
 
 	public CadastroFuncionarioUI() {
-
+		
 		frameFun = new JFrame("Cadastro de Funcionario");
 		frameFun.setSize(413, 164);
 		frameFun.setLocationRelativeTo(null);

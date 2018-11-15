@@ -9,6 +9,7 @@ import javax.swing.JMenuItem;
 import javax.swing.border.BevelBorder;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import java.awt.Insets;
 
 public class MenuPrincipalUI {
 

@@ -18,6 +18,7 @@ public class Cliente {
 		return nome;
 	}
 	public void setNome(String nome) {
+					
 		this.nome = nome;
 	}
 	
@@ -25,6 +26,9 @@ public class Cliente {
 		return cpf;
 	}
 	public void setCpf(String cpf) {
+		if(ValidaCPF.isCPF(cpf) == false) {
+            throw new IllegalArgumentException("Erro, CPF invalido !!!");     
+		}
 		this.cpf = cpf;
 	}
 	public String getDataNasc() {
