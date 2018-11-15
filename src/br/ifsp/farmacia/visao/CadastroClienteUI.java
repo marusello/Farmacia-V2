@@ -113,9 +113,7 @@ public class CadastroClienteUI {
 
 					cli.setNome(txtNome.getText());
 					
-					cli.setCpf(txtCPF.getText());
-					
-					
+					cli.setCpf(txtCPF.getText());					
 					
 					cli.setEmail(txtEmail.getText());
 					cli.setDataNasc(txtData.getText());
@@ -124,7 +122,7 @@ public class CadastroClienteUI {
 					cl.gravarCliente(cli);
 					JOptionPane.showMessageDialog(null, "Cliente salvo!\n");
 
-				} catch (Exception e) {
+				} catch (IllegalArgumentException e) {
 					JOptionPane.showMessageDialog(null, e.getMessage());
 
 				}

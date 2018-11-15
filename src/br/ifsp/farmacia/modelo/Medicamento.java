@@ -14,6 +14,9 @@ public class Medicamento {
 		return nome_medicamento;
 	}
 	public void setNome_medicamento(String nome_medicamento) {
+		if (nome_medicamento.equals("")) 
+            throw new IllegalArgumentException("Nome não pode estar vazio");  
+		
 		this.nome_medicamento = nome_medicamento;
 	}
 	public boolean isStatus() {
@@ -32,12 +35,17 @@ public class Medicamento {
 		return numeracao_medicamento;
 	}
 	public void setNumeracao_medicamento(String numeracao_medicamento) {
+		if (numeracao_medicamento.equals("")) 
+        throw new IllegalArgumentException("Codigo de Barras está vazio"); 
+		
 		this.numeracao_medicamento = numeracao_medicamento;
 	}
 	public double getValor_unit() {
 		return valor_unit;
 	}
 	public void setValor_unit(double valor_unit) {
+		if (valor_unit <= 0) 
+	        throw new IllegalArgumentException("Insira uma valor "); 
 		this.valor_unit = valor_unit;
 	}
 	public int getId_medicamento() {

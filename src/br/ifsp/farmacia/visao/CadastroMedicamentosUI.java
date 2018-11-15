@@ -97,13 +97,10 @@ public class CadastroMedicamentosUI{
 		btnSalvar.setBounds(174, 143, 86, 54);
 		btnSalvar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int msg = 0;
 				try {					
-					Medicamento med = new Medicamento();
-					
+					Medicamento med = new Medicamento();					
 				
-					med.setNome_medicamento(txtNome.getText());
-					
+					med.setNome_medicamento(txtNome.getText());					
 					med.setDescricao_medicamento(txtDescricao.getText());
 					med.setNumeracao_medicamento(txtcodBarras.getText());
 					med.setValor_unit(Double.parseDouble(txtValor.getText()));
@@ -112,10 +109,7 @@ public class CadastroMedicamentosUI{
 					med.setStatus(true);
 					
 					else 
-						med.setStatus(false);
-					
-			
-					
+						med.setStatus(false);					
 				
 					CadastrarMedicamentoCtrl cm = new CadastrarMedicamentoCtrl();
 					cm.gravarMedicamento(med);
@@ -125,7 +119,7 @@ public class CadastroMedicamentosUI{
 				
 				 catch (IllegalArgumentException e) {	
 					
-					JOptionPane.showMessageDialog(null, "Campo vazio");
+						JOptionPane.showMessageDialog(null, e.getMessage());
 					
 				}
 				
