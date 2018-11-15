@@ -61,13 +61,7 @@ public class CadastroFuncionarioUI {
 				Funcionario fu = new Funcionario();
 				try {
 					
-					fu.setCargo(cbCargo.getSelectedItem().toString());
-					
-					if(txtNome.getText() != "a-z") {
-			            throw new IllegalArgumentException("Só letras!");    
-
-					}
-					
+					fu.setCargo(cbCargo.getSelectedItem().toString());					
 					fu.setNome(txtNome.getText());
 					
 					CadastrarFuncionarioCtrl cfl = new CadastrarFuncionarioCtrl();
