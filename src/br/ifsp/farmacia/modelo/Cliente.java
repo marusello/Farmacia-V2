@@ -1,5 +1,8 @@
 package br.ifsp.farmacia.modelo;
 
+import br.ifsp.farmacia.visao.CadastroClienteUI;
+import br.ifsp.farmacia.visao.CadastroFuncionarioUI;
+
 public class Cliente {
 
 	private int idCliente;
@@ -18,7 +21,8 @@ public class Cliente {
 		return nome;
 	}
 	public void setNome(String nome) {
-					
+		if (nome.equals("")) 
+            throw new IllegalArgumentException("Nome não pode ficar vazio");   		
 		this.nome = nome;
 	}
 	
@@ -41,7 +45,7 @@ public class Cliente {
 	public String getEmail() {
 		return email;
 	}
-	public void setEmail(String email) {
+	public void setEmail(String email) {		
 		this.email = email;
 	}
 }
