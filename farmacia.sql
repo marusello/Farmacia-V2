@@ -7,6 +7,9 @@
 -- Versão do servidor: 5.7.21
 -- PHP Version: 5.6.35
 
+CREATE DATABASE farmacia;
+USE farmacia;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
