@@ -1,8 +1,5 @@
 package br.ifsp.farmacia.modelo;
 
-import br.ifsp.farmacia.visao.CadastroClienteUI;
-import br.ifsp.farmacia.visao.CadastroFuncionarioUI;
-
 public class Cliente {
 
 	private int idCliente;
@@ -30,7 +27,7 @@ public class Cliente {
 		return cpf;
 	}
 	public void setCpf(String cpf) {
-		if(ValidaCPF.isCPF(cpf) == false) {
+		if(cpf.equals("")) {
             throw new IllegalArgumentException("Erro, CPF invalido !!!");     
 		}
 		this.cpf = cpf;
