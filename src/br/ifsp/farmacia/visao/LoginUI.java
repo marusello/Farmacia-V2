@@ -15,13 +15,13 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
 
-public class Login {
+public class LoginUI {
 	
 	public static void main(String[] args) {
 		
 		// Criando o JFrame
 		JFrame frmLogin = new JFrame("Farmacia");
-		frmLogin.setIconImage(Toolkit.getDefaultToolkit().getImage(Login.class.getResource("/br/ifsp/farmacia/imagem/048-insurance.png")));
+		frmLogin.setIconImage(Toolkit.getDefaultToolkit().getImage(LoginUI.class.getResource("/br/ifsp/farmacia/imagem/048-insurance.png")));
 		frmLogin.setTitle("Sistema de Software | Farmacia");
 		frmLogin.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
 		frmLogin.setSize(444, 377);
@@ -84,15 +84,15 @@ public class Login {
 		btnCancelar.setBounds(281, 260, 107, 23);
 		frmLogin.getContentPane().add(btnCancelar);
 		
-		JLabel lblFarmcia = new JLabel("Farmacia");
+		JLabel lblFarmcia = new JLabel("Farmácia POO");
 		lblFarmcia.setForeground(new Color(0, 128, 0));
-		lblFarmcia.setFont(new Font("BlackJack", Font.BOLD, 93));
+		lblFarmcia.setFont(new Font("Calibri", Font.BOLD, 60));
 		lblFarmcia.setBackground(new Color(255, 69, 0));
 		lblFarmcia.setBounds(21, 45, 397, 115);
 		frmLogin.getContentPane().add(lblFarmcia);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(Login.class.getResource("/br/ifsp/farmacia/imagem/024-pharmacist.png")));
+		label.setIcon(new ImageIcon(LoginUI.class.getResource("/br/ifsp/farmacia/imagem/024-pharmacist.png")));
 		label.setBounds(31, 171, 107, 122);
 		frmLogin.getContentPane().add(label);
 		
