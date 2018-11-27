@@ -50,8 +50,10 @@ public class CaixaUI {
 		
 		for (Funcionario fun : arrayFuncionario) {
 			cbOperador.addItem(fun);
-		}
-		panel.add(cbOperador);
+			
+		}	
+		
+		//panel.add(cbOperador);
 		panel.add(cbOperador);
 		
 		JButton btnFecharCaixa = new JButton("Fechar Caixa");
@@ -70,12 +72,15 @@ public class CaixaUI {
 		JButton btnAbrirCaixa = new JButton("Abrir Caixa");
 		btnAbrirCaixa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				try {
+					
 				Caixa cax = new Caixa();
-				cax.setEstado(true);
-				cax.setValorTotal(Double.parseDouble(txtValor.getText()));
 				Funcionario fu = (Funcionario) cbOperador.getSelectedItem();
-				cax.setOperadorId(fu);			
-				//cax.setFunId(Integer.parseInt(cbOperador.getSelectedItem().toString()));
+				
+				cax.setEstado(true);
+				cax.setValorTotal(Double.parseDouble(txtValor.getText()));				
+				cax.setOperadorId(fu);				
 				
 				CadastrarCaixaCtrl cx = new CadastrarCaixaCtrl();
 				cx.gravaCaixa(cax);
@@ -83,6 +88,11 @@ public class CaixaUI {
 				JOptionPane.showMessageDialog(null,"Caixa Aberto!\n");
 				frameCax.dispose();
 				new VendaUI();
+				
+				}
+				catch (IllegalArgumentException e) {
+					JOptionPane.showMessageDialog(null, e.getMessage());
+				}
 				
 			}
 		});

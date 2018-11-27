@@ -3,13 +3,13 @@ package br.ifsp.farmacia.modelo;
 public class Caixa {
 	private int numCaixa;
 	private boolean estado;
-	private double valorTotal;
+	private double valorTotal ;
 	private Funcionario OperadorId;
 	
 	public int getNumCaixa() {
 		return numCaixa;
 	}
-	public void setNumCaixa(int numCaixa) {
+	public void setNumCaixa(int numCaixa) {		  		
 		this.numCaixa = numCaixa;
 	}
 	public boolean isEstado() {
@@ -22,12 +22,14 @@ public class Caixa {
 		return valorTotal;
 	}
 	public void setValorTotal(double valorTotal) {
+		if (valorTotal <= 0)
+            throw new IllegalArgumentException("Caixa não pode iniciar vazio");
 		this.valorTotal = valorTotal;
 	}
 	public Funcionario getOperadorId() {
 		return OperadorId;
 	}
-	public void setOperadorId(Funcionario operadorId) {
+	public void setOperadorId(Funcionario operadorId) {		 
 		this.OperadorId = operadorId;
 	}
 	
