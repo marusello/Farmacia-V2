@@ -15,10 +15,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.JCheckBox;
 import javax.swing.JButton;
 import javax.swing.JTable;
-import javax.sql.rowset.spi.TransactionalWriter;
 import javax.swing.ImageIcon;
 import java.awt.SystemColor;
 

@@ -91,7 +91,7 @@ public class CaixaUI {
 				
 				}
 				catch (IllegalArgumentException e) {
-					JOptionPane.showMessageDialog(null, e.getMessage());
+					JOptionPane.showMessageDialog(null, "Valor de caixa não inserido, tente novamente");
 				}
 				
 			}
