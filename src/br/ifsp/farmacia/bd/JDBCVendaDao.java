@@ -27,7 +27,7 @@ public class JDBCVendaDao implements VendaDao {
 			System.out.println(" Abrindo conexão ... ");
 			Connection conexao = ConnectionFactory.createConnection();
 			
-			String sql = "INSERT INTO venda (produto, quantidade, subTotal, valorTotal, clienteEspecial)" + " VALUES (?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO venda (produto, quantidade, subTotal, valorTotal, id_cliente)" + " VALUES (?, ?, ?, ?, ?)";
 			
 			PreparedStatement comando = conexao.prepareStatement(sql);
 			

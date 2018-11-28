@@ -118,7 +118,6 @@ public class CadastroMedicamentosUI{
 				 catch (IllegalArgumentException e) {	
 					
 						JOptionPane.showMessageDialog(null, e.getMessage());
-					
 				}
 				
 				

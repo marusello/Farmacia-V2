@@ -73,8 +73,8 @@ public class Medicamento implements RemedioObserver {
 	}
 	
 	/**
-	 * Documentação do Método setCargo
-	 * @param cargo
+	 * Documentação do Método setValor_unit
+	 * @param valor_unit
 	 * 
 	 * Documentação do atributo cargo
 	 * @throws IllegalArgumentException

@@ -109,6 +109,7 @@ public class JDBCEstoqueDao implements EstoqueDao {
 	 * 
 	 * Para ataualizar o estoque
 	 */
+	/*
 	@Override
 	public void AtualizarEstoque(Estoque estoque) {
 		try {
@@ -134,6 +135,6 @@ public class JDBCEstoqueDao implements EstoqueDao {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 }

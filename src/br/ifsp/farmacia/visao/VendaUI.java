@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
@@ -18,9 +19,12 @@ import br.ifsp.farmacia.controle.VendaCtrl;
 import br.ifsp.farmacia.modelo.Cliente;
 
 import br.ifsp.farmacia.modelo.Medicamento;
+import br.ifsp.farmacia.modelo.Venda;
 
 import java.awt.Color;
 import javax.swing.JRadioButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class VendaUI  {
 
@@ -93,6 +97,29 @@ public class VendaUI  {
 		txtQtd.setColumns(10);
 		
 		JButton btnInserir = new JButton("Inserir");
+		btnInserir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					Venda sale = new Venda();
+					
+					Medicamento medicamento = (Medicamento) cbMedicamento.getSelectedItem();
+					sale.setMedicamento(medicamento);
+					Cliente cliente = (Cliente) cbCliente.getSelectedItem();
+					sale.setCliente(cliente);
+					sale.setQuantidade(Integer.parseInt(txtQtd.getText()));
+					
+					VendaCtrl vc = new VendaCtrl();
+					vc.gravaVenda(sale);
+					JOptionPane.showMessageDialog(null,"Venda realizada com sucesso!\n");	
+				}
+				
+				catch (IllegalArgumentException e){
+					
+					JOptionPane.showMessageDialog(null, e.getMessage());
+				}
+				
+			}
+		});
 		btnInserir.setBounds(281, 79, 89, 23);
 		panel.add(btnInserir);
 		

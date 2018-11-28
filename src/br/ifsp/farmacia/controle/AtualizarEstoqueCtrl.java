@@ -21,7 +21,7 @@ public ArrayList<Medicamento> obterMedicamento(){
 	public void AtualizarEstoque(Estoque estoque) {
 		
 		EstoqueDao es = new JDBCEstoqueDao();	
-		es.AtualizarEstoque(estoque);
+		//es.AtualizarEstoque(estoque);
 	}
 	
 	

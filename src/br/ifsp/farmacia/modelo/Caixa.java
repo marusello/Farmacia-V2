@@ -78,7 +78,7 @@ public class Caixa {
 	
 	/**
 	 * Documentação do método setOperadorId
-	 * @param OperadorId the OperadorId to set
+	 * @param operadorId the operadorId to set
 	 */	
 	public void setOperadorId(Funcionario operadorId) {		 
 		this.OperadorId = operadorId;
