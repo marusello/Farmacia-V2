@@ -2,11 +2,22 @@ package br.ifsp.farmacia.modelo;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Documentação da Classe Remedio
+ * @author Gustavo Maciel, Marcelo Augusto e Iuki Kobayakawa
+ * @version 2.0
+ */
+
 public class Remedio {
 	
 	private String codigo;
 	private double valor;
 	
+	/**
+	 * Documentação do Set 
+	 * Implementação de um Hash para listar os medicamentos observados
+	 * 
+	 */
 	private Set<RemedioObserver> interessados = new HashSet<RemedioObserver>();
 	
 	public Remedio(String codigo, double valor) {
@@ -26,6 +37,12 @@ public class Remedio {
 		return valor;
 	}
 	
+	/**
+	 * Documentação do método setValor
+	 * @param valor the valor to set
+	 * 
+	 * Implementação de um Foreach
+	 */
 	public void setValor(double valor) {
 		this.valor = valor;
 		for (RemedioObserver interessado : this.interessados) {

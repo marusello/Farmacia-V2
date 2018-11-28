@@ -1,5 +1,11 @@
 package br.ifsp.farmacia.modelo;
 
+/**
+ * Documentação da Venda.
+ * @author Gustavo Maciel, Marcelo Augusto e Iuki Kobayakawa
+ * @version 2.0
+ */
+
 public class Venda {
 	private int codVenda;
 	private Medicamento medicamento;

@@ -1,5 +1,11 @@
 package br.ifsp.farmacia.modelo;
 
+/**
+ * Documentação da Classe Medicamento
+ * @author Gustavo Maciel, Marcelo Augusto e Iuki Kobayakawa
+ * @version 2.0
+ */
+
 public class Medicamento implements RemedioObserver {
 
 	private int id_medicamento;	
@@ -13,9 +19,18 @@ public class Medicamento implements RemedioObserver {
 	public String getNome_medicamento() {
 		return nome_medicamento;
 	}
+	
+	/**
+	 * Documentação do Método setNome_medicamento
+	 * @param nome_medicamento
+	 * 
+	 * Documentação do atributo nome_medicamento
+	 * @throws IllegalArgumentException
+	 * 	Documentação da situação que gera a exception IllegalArgumentException
+	 */
 	public void setNome_medicamento(String nome_medicamento) {
 		if (nome_medicamento.equals("")) 
-            throw new IllegalArgumentException("Nome não pode estar vazio");  
+            throw new IllegalArgumentException("Nome não pode estar vazio");
 		
 		this.nome_medicamento = nome_medicamento;
 	}
@@ -34,6 +49,15 @@ public class Medicamento implements RemedioObserver {
 	public String getNumeracao_medicamento() {
 		return numeracao_medicamento;
 	}
+	
+	/**
+	 * Documentação do Método setNumeracao_medicamento
+	 * @param numeracao_medicamento
+	 * 
+	 * Documentação do atributo numeracao_medicamento
+	 * @throws IllegalArgumentException
+	 * 	Documentação da situação que gera a exception IllegalArgumentException
+	 */
 	public void setNumeracao_medicamento(String numeracao_medicamento) {
 		if (numeracao_medicamento.equals("")) 
         throw new IllegalArgumentException("Codigo de Barras está vazio"); 
@@ -43,6 +67,15 @@ public class Medicamento implements RemedioObserver {
 	public double getValor_unit() {
 		return valor_unit;
 	}
+	
+	/**
+	 * Documentação do Método setCargo
+	 * @param cargo
+	 * 
+	 * Documentação do atributo cargo
+	 * @throws IllegalArgumentException
+	 * 	Documentação da situação que gera a exception IllegalArgumentException
+	 */
 	public void setValor_unit(double valor_unit) {
 		if (valor_unit <= 0) 
 	        throw new IllegalArgumentException("Insira uma valor "); 
@@ -59,6 +92,15 @@ public class Medicamento implements RemedioObserver {
 		return nome_medicamento;
 	}
 	
+	
+	/**
+	 * Documentação do Método notificaAlteracao
+	 * @param remedio
+	 * 
+	 * Documentação do atributo remedio
+	 * @throws IllegalArgumentException
+	 * 	Documentação da situação que gera a exception IllegalArgumentException
+	 */
 	@Override
 	public void notificaAlteracao(Remedio remedio) {
 		
