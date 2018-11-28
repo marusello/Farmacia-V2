@@ -5,11 +5,22 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import br.ifsp.farmacia.modelo.Medicamento;
 import br.ifsp.farmacia.modelo.Venda;
+
+/**
+ * Documentação da Classe JDBCVendaDao
+ * @author Gustavo Maciel, Marcelo Augusto e Iuki Kobayakawa
+ * @version 2.0
+ */
 
 public class JDBCVendaDao implements VendaDao {
 
+	/**
+	 * Documentação do método gravaVenda
+	 * @param venda the venda to set
+	 * 
+	 * Para inserir venda
+	 */
 	@Override
 	public void gravaVenda(Venda venda) {
 		try {
@@ -39,6 +50,12 @@ public class JDBCVendaDao implements VendaDao {
 
 	}
 
+	/**
+	 * Documentação do método obterVenda
+	 * @return the listaVendas
+	 * 
+	 * Para listar as vendas usando ArrayList
+	 */
 	@Override
 	public ArrayList<Venda> obterVenda() {
 		
@@ -89,7 +106,7 @@ public class JDBCVendaDao implements VendaDao {
 
 	@Override
 	public Venda obterVenda(int idVenda) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

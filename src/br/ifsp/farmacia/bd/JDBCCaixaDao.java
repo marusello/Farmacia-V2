@@ -5,8 +5,20 @@ import java.sql.PreparedStatement;
 
 import br.ifsp.farmacia.modelo.Caixa;
 
+/**
+ * Documentação da Classe JDBCCaixaDao
+ * @author Gustavo Maciel, Marcelo Augusto e Iuki Kobayakawa
+ * @version 2.0
+ */
+
 public class JDBCCaixaDao implements CaixaDao {
 
+	/**
+	 * Documentação do método gravaCaixa
+	 * @param caixa the caixa to set
+	 * 
+	 * Para abrir o caixa
+	 */
 	@Override
 	public void gravaCaixa(Caixa caixa) {
 		try {

@@ -11,10 +11,8 @@ public interface RemedioObserver {
 	/**
 	 * Documentação do Método notificaAlteracao
 	 * @param remedio
-	 * 
-	 * Documentação do atributo remedio
-	 * @throws IllegalArgumentException
-	 * 	Documentação da situação que gera a exception IllegalArgumentException
+	 *
+	 * Assinatura de método notificaAlteracao
 	 */
 	
 	void notificaAlteracao(Remedio remedio);

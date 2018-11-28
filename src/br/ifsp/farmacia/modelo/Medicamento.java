@@ -27,6 +27,8 @@ public class Medicamento implements RemedioObserver {
 	 * Documentação do atributo nome_medicamento
 	 * @throws IllegalArgumentException
 	 * 	Documentação da situação que gera a exception IllegalArgumentException
+	 * 
+	 * O Textbox não pode ficar vazio, senão a Exception é ativada
 	 */
 	public void setNome_medicamento(String nome_medicamento) {
 		if (nome_medicamento.equals("")) 
@@ -57,6 +59,8 @@ public class Medicamento implements RemedioObserver {
 	 * Documentação do atributo numeracao_medicamento
 	 * @throws IllegalArgumentException
 	 * 	Documentação da situação que gera a exception IllegalArgumentException
+	 * 
+	 * O Textbox não pode ficar vazio, senão a Exception é ativada
 	 */
 	public void setNumeracao_medicamento(String numeracao_medicamento) {
 		if (numeracao_medicamento.equals("")) 
@@ -75,6 +79,8 @@ public class Medicamento implements RemedioObserver {
 	 * Documentação do atributo cargo
 	 * @throws IllegalArgumentException
 	 * 	Documentação da situação que gera a exception IllegalArgumentException
+	 * 
+	 * É preciso inserir um valor maior que zero, senão a Exception é ativada 
 	 */
 	public void setValor_unit(double valor_unit) {
 		if (valor_unit <= 0) 
@@ -100,6 +106,8 @@ public class Medicamento implements RemedioObserver {
 	 * Documentação do atributo remedio
 	 * @throws IllegalArgumentException
 	 * 	Documentação da situação que gera a exception IllegalArgumentException
+	 * 
+	 * Toda alteração de preço que ocorre, um observer notifica a ação
 	 */
 	@Override
 	public void notificaAlteracao(Remedio remedio) {

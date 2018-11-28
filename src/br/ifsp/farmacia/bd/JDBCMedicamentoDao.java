@@ -6,8 +6,20 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import br.ifsp.farmacia.modelo.Medicamento;
 
+/**
+ * Documentação da Classe JDBCMedicamentoDao
+ * @author Gustavo Maciel, Marcelo Augusto e Iuki Kobayakawa
+ * @version 2.0
+ */
+
 public class JDBCMedicamentoDao implements MedicamentoDao {
 
+	/**
+	 * Documentação do método gravaMedicamento
+	 * @param medicamento the medicamento to set
+	 * 
+	 * Para inserir medicamento
+	 */
 	@Override
 	public void gravaMedicamento(Medicamento medicamento) {
 		try {
@@ -31,13 +43,18 @@ public class JDBCMedicamentoDao implements MedicamentoDao {
 			conexao.close();
 		
 			
-		} 
-		
+		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
+	/**
+	 * Documentação do método obterMedicamento
+	 * @return the listaMedicamentos
+	 * 
+	 * Para listar os medicamentos usando ArrayList
+	 */
 	@Override
 	public ArrayList<Medicamento> obterMedicamento() {
 		
@@ -89,7 +106,12 @@ public class JDBCMedicamentoDao implements MedicamentoDao {
 		}
 	} 
 
-	
+	/**
+	 * Documentação do método obterMedicamentos
+	 * @return the listaMedicamentos
+	 * 
+	 * Para selecionar apenas um dos medicamentos
+	 */
 	@Override
 	public Medicamento obterMedicamentos(int idMedicamento) {
 		

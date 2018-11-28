@@ -7,8 +7,20 @@ import java.util.ArrayList;
 
 import br.ifsp.farmacia.modelo.Cliente;
 
+/**
+ * Documentação da Classe JDBCClienteDao
+ * @author Gustavo Maciel, Marcelo Augusto e Iuki Kobayakawa
+ * @version 2.0
+ */
+
 public class JDBCClienteDao implements ClienteDao {
 
+	/**
+	 * Documentação do método gravaCliente
+	 * @param cliente the cliente to set
+	 * 
+	 * Para inserir cliente
+	 */
 	@Override
 	public void gravaCliente(Cliente cliente) {
 		try {
@@ -37,6 +49,12 @@ public class JDBCClienteDao implements ClienteDao {
 
 	}
 
+	/**
+	 * Documentação do método obterClientes
+	 * @return the listaClientes
+	 * 
+	 * Para listar os clientes usando ArrayList
+	 */	
 	@Override
 	public ArrayList<Cliente> obterClientes() {
 		try {

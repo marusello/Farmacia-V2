@@ -47,7 +47,7 @@ public class Venda {
 			 
 		}
 		else if(cliente.equals(true)){
-			VendaStrategy sa = new aposentado();
+			VendaStrategy sa = new Aposentado();
 			
 			this.valorTotal = sa.total(valorTotal);
 			

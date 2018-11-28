@@ -3,7 +3,7 @@ package br.ifsp.farmacia.visao;
 import java.awt.SystemColor;
 import java.util.ArrayList;
 
-import javax.swing.ImageIcon;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -11,15 +11,13 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JTable;
-import javax.swing.border.BevelBorder;
+
 import javax.swing.border.LineBorder;
 
-import br.ifsp.farmacia.controle.CadastrarCaixaCtrl;
 import br.ifsp.farmacia.controle.VendaCtrl;
 import br.ifsp.farmacia.modelo.Cliente;
-import br.ifsp.farmacia.modelo.Funcionario;
+
 import br.ifsp.farmacia.modelo.Medicamento;
-import br.ifsp.farmacia.modelo.Venda;
 
 import java.awt.Color;
 import javax.swing.JRadioButton;

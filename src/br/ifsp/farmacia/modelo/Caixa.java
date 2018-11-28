@@ -59,6 +59,8 @@ public class Caixa {
 	 * Documentação do atributo valorTotal
 	 * @throws IllegalArgumentException
 	 * 	Documentação da situação que gera a exception IllegalArgumentException
+	 * 
+	 * Quando o usuário deixar o textBox do valor vazio que há no caixa a Exception será ativada
 	 */
 	public void setValorTotal(double valorTotal) {
 		if (valorTotal <= 0)

@@ -45,6 +45,8 @@ public class Cliente {
 	 * Documentação do atributo nome
 	 * @throws IllegalArgumentException
 	 * 	Documentação da situação que gera a exception IllegalArgumentException
+	 * 
+	 * O Textbox não pode ficar vazio, senão a Exception é ativada
 	 */
 	public void setNome(String nome) {
 		if (nome.equals("")) 
@@ -67,6 +69,8 @@ public class Cliente {
 	 * Documentação do atributo cpf
 	 * @throws IllegalArgumentException
 	 * 	Documentação da situação que gera a exception IllegalArgumentException
+	 * 
+	 * O Textbox não pode ficar vazio, senão a Exception é ativada
 	 */
 	public void setCpf(String cpf) {
 		if(cpf.equals("")) {

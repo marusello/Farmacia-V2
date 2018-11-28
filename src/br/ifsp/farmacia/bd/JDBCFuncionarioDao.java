@@ -7,8 +7,20 @@ import java.util.ArrayList;
 
 import br.ifsp.farmacia.modelo.Funcionario;
 
+/**
+ * Documentação da Classe JDBCFuncionarioDao
+ * @author Gustavo Maciel, Marcelo Augusto e Iuki Kobayakawa
+ * @version 2.0
+ */
+
 public class JDBCFuncionarioDao implements FuncionarioDao {
 
+	/**
+	 * Documentação do método gravaFuncionario
+	 * @param funcionario the funcionario to set
+	 * 
+	 * Para inserir funcionario
+	 */
 	@Override
 	public void gravaFuncionario(Funcionario funcionario) {
 
@@ -38,6 +50,12 @@ public class JDBCFuncionarioDao implements FuncionarioDao {
 
 	}
 
+	/**
+	 * Documentação do método obterFuncionario
+	 * @return the listaFuncionario
+	 * 
+	 * Para listar os funcionarios usando ArrayList
+	 */
 	@Override
 	public ArrayList<Funcionario> obterFuncionario() {
 		try {

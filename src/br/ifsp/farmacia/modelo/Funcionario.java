@@ -41,6 +41,8 @@ public class Funcionario {
 	 * Documentação do atributo nome
 	 * @throws IllegalArgumentException
 	 * 	Documentação da situação que gera a exception IllegalArgumentException
+	 * 
+	 * O Textbox não pode ficar vazio, senão a Exception é ativada
 	 */
 	public void setNome(String nome) {
 		
@@ -51,8 +53,8 @@ public class Funcionario {
 	}
 	
 	/**
-	 * Documentação do método getIdLote
-	 * @return the idLote
+	 * Documentação do método getCargo
+	 * @return the cargo
 	 */
 	public String getCargo() {
 		return cargo;
@@ -66,6 +68,8 @@ public class Funcionario {
 	 * Documentação do atributo cargo
 	 * @throws IllegalArgumentException
 	 * 	Documentação da situação que gera a exception IllegalArgumentException
+	 * 
+	 * O Textbox não pode ficar vazio, senão a Exception é ativada
 	 */
 	public void setCargo(String cargo) {
 		if (cargo.equals("")) 

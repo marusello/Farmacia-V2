@@ -1,6 +1,6 @@
 package br.ifsp.farmacia.modelo;
 
-public class aposentado implements VendaStrategy {
+public class Aposentado implements VendaStrategy {
 
 	@Override
 	public double total(double total) {

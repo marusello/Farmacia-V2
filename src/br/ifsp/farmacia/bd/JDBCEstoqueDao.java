@@ -8,9 +8,20 @@ import java.util.ArrayList;
 //import br.ifsp.farmacia.modelo.Cliente;
 import br.ifsp.farmacia.modelo.Estoque;
 
+/**
+ * Documentação da Classe JDBCEstoqueDao
+ * @author Gustavo Maciel, Marcelo Augusto e Iuki Kobayakawa
+ * @version 2.0
+ */
 
 public class JDBCEstoqueDao implements EstoqueDao {
 
+	/**
+	 * Documentação do método gravaEstoque
+	 * @param estoque the estoque to set
+	 * 
+	 * Para inserir estoque
+	 */
 	@Override
 	public void gravaEstoque(Estoque estoque) {
 		try {
@@ -38,6 +49,12 @@ public class JDBCEstoqueDao implements EstoqueDao {
 
 	}
 
+	/**
+	 * Documentação do método obterEstoque
+	 * @return the listaEstoque
+	 * 
+	 * Para listar o estoque usando ArrayList
+	 */
 	@Override
 	public ArrayList<Estoque> obterEstoque() {
 		try {
@@ -72,7 +89,7 @@ public class JDBCEstoqueDao implements EstoqueDao {
 			System.out.println("\n Fechando conexão ... ");
 			conexao . close ();
 			
-			return listaEstoque;//retorna a lista de clientes
+			return listaEstoque;//retorna a lista de estoque
 			
 		} catch ( Exception e) {
 			e. printStackTrace ();
@@ -86,6 +103,12 @@ public class JDBCEstoqueDao implements EstoqueDao {
 		return null;
 	}
 	
+	/**
+	 * Documentação do método AtualizarEstoque
+	 * @param estoque the estoque to set
+	 * 
+	 * Para ataualizar o estoque
+	 */
 	@Override
 	public void AtualizarEstoque(Estoque estoque) {
 		try {
