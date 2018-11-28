@@ -14,6 +14,7 @@ public class Venda {
 	private double valorTotal;
 	private Caixa caixa;
 	private Cliente cliente;
+	private String pagamento;
 	
 	public int getCodVenda() {
 		return codVenda;
@@ -37,7 +38,23 @@ public class Venda {
 		return valorTotal;
 	}
 	public void setValorTotal(double valorTotal) {
-		this.valorTotal = valorTotal;
+		
+		if(pagamento == "dinheiro") {
+			VendaStrategy st = new Dinheiro();
+			
+			this.valorTotal = st.total(valorTotal);
+			
+			 
+		}
+		else if(cliente.equals(true)){
+			VendaStrategy sa = new aposentado();
+			
+			this.valorTotal = sa.total(valorTotal);
+			
+		}else {
+			this.valorTotal = valorTotal;
+		}
+		
 	}
 	public Medicamento getMedicamento() {
 		return medicamento;

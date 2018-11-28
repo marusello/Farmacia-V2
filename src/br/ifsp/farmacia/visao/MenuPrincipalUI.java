@@ -124,7 +124,20 @@ public class MenuPrincipalUI {
 			}
 		});
 		mnVenda.add(mntmVenda);
+		
+		JMenu mnAtualizar = new JMenu("Atualizar");
+		menuBar.add(mnAtualizar);
+		
+		JMenuItem mntmAtualizarEstoque = new JMenuItem("Atualizar Estoque");
+		mntmAtualizarEstoque.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new AtualizarEstoqueUI();
+			}
+		});
+		mnAtualizar.add(mntmAtualizarEstoque);
 		frame.getContentPane().setLayout(null);
+		
+		
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(MenuPrincipalUI.class.getResource("/br/ifsp/farmacia/imagem/logo.png")));

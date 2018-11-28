@@ -10,7 +10,7 @@ public class ConnectionFactory {
 		
 		String stringDeConexao = "jdbc:mysql://localhost:3306/farmacia";
 		String usuario = "root";
-		String senha = "930917";
+		String senha = "";
 		
 		Connection conexao = null ;
 		
