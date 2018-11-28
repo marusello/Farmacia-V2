@@ -1,6 +1,6 @@
 package br.ifsp.farmacia.modelo;
 
-public class Medicamento {
+public class Medicamento implements RemedioObserver {
 
 	private int id_medicamento;	
 	private String nome_medicamento;
@@ -57,6 +57,13 @@ public class Medicamento {
 	@Override
 	public String toString() {
 		return nome_medicamento;
+	}
+	
+	@Override
+	public void notificaAlteracao(Remedio remedio) {
+		
+	System.out.println("Estoque " + this.getNome_medicamento() + " sendo notificado");
+	System.out.println("O medicamento " + remedio.getCodigo() + " teve o seu valor alterado para " + this.getValor_unit());
 	}
 	
 }
