@@ -1,14 +1,11 @@
--- phpMyAdmin SQL Dump
--- version 4.7.9
+﻿-- phpMyAdmin SQL Dump
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 22-Nov-2018 às 02:05
--- Versão do servidor: 5.7.21
--- PHP Version: 5.6.35
-
-CREATE DATABASE farmacia;
-USE farmacia;
+-- Generation Time: 28-Nov-2018 às 21:05
+-- Versão do servidor: 5.7.23
+-- versão do PHP: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,6 +28,9 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `caixa`
 --
 
+CREATE DATABASE farmacia;
+USE farmacia;
+
 DROP TABLE IF EXISTS `caixa`;
 CREATE TABLE IF NOT EXISTS `caixa` (
   `numCaixa` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -39,14 +39,15 @@ CREATE TABLE IF NOT EXISTS `caixa` (
   `operador` bigint(20) NOT NULL,
   PRIMARY KEY (`numCaixa`),
   KEY `fk_funcionario` (`operador`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `caixa`
 --
 
 INSERT INTO `caixa` (`numCaixa`, `estado`, `valorTotal`, `operador`) VALUES
-(1, 1, 123, 1);
+(1, 1, 123, 1),
+(2, 1, 200, 1);
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,14 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `dataNasc` varchar(15) NOT NULL,
   `email` varchar(50) NOT NULL,
   PRIMARY KEY (`idCliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `cliente`
+--
+
+INSERT INTO `cliente` (`idCliente`, `nome`, `cpf`, `dataNasc`, `email`) VALUES
+(1, 'Jeriel', '418.205.558-60', '01/01/2018', 'jeriel@jeriel.com.br');
 
 -- --------------------------------------------------------
 
@@ -116,7 +124,14 @@ CREATE TABLE IF NOT EXISTS `medicamento` (
   `codBarras` varchar(50) NOT NULL,
   `valorUnit` double NOT NULL,
   PRIMARY KEY (`id_medicamento`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `medicamento`
+--
+
+INSERT INTO `medicamento` (`id_medicamento`, `nome`, `estado`, `descricao`, `codBarras`, `valorUnit`) VALUES
+(1, 'Dipirona', 1, 'Para dor de cabeça', '123456789', 2.5);
 
 -- --------------------------------------------------------
 
@@ -148,16 +163,21 @@ INSERT INTO `usuario` (`idUsuario`, `login`, `senha`) VALUES
 
 DROP TABLE IF EXISTS `venda`;
 CREATE TABLE IF NOT EXISTS `venda` (
-  `codVenda` bigint(20) NOT NULL,
+  `codVenda` bigint(20) NOT NULL AUTO_INCREMENT,
   `produto` bigint(20) NOT NULL,
   `quantidade` int(11) NOT NULL,
   `subTotal` double NOT NULL,
   `valorTotal` double NOT NULL,
-  `numCaixa` bigint(20) NOT NULL,
   `id_cliente` bigint(20) NOT NULL,
-  PRIMARY KEY (`codVenda`),
-  KEY `fk_estoque` (`produto`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`codVenda`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `venda`
+--
+
+INSERT INTO `venda` (`codVenda`, `produto`, `quantidade`, `subTotal`, `valorTotal`, `id_cliente`) VALUES
+(3, 1, 1, 0, 0, 1);
 
 --
 -- Constraints for dumped tables
@@ -174,12 +194,6 @@ ALTER TABLE `caixa`
 --
 ALTER TABLE `estoque`
   ADD CONSTRAINT `fk_medicamento` FOREIGN KEY (`nomeProduto`) REFERENCES `medicamento` (`id_medicamento`);
-
---
--- Limitadores para a tabela `venda`
---
-ALTER TABLE `venda`
-  ADD CONSTRAINT `fk_estoque` FOREIGN KEY (`produto`) REFERENCES `estoque` (`idLote`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
