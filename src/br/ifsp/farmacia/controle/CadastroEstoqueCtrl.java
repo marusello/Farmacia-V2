@@ -15,7 +15,7 @@ public class CadastroEstoqueCtrl {
 public ArrayList<Medicamento> obterMedicamento(){
 		
 		MedicamentoDao me = new JDBCMedicamentoDao();
-		return me.obterMedicamentos();
+		return me.obterMedicamento();
 	}
 	
 	public void gravarEstoque(Estoque estoque) {

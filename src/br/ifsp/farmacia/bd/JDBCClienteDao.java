@@ -55,15 +55,15 @@ public class JDBCClienteDao implements ClienteDao {
 			System.out.println(" Resultados encontrados : \n");
 			
 			while (resultado.next()) {
-				System.out.printf("%d : %s - %.2f - %d\n", 
-						resultado.getInt("id"), 
+				System.out.printf("%d : %s - %s - %s - %s \n", 
+						resultado.getInt("idCliente"), 
 						resultado.getString("nome"), 
 						resultado.getString("cpf"), 
-						resultado.getDate("dataNasc"));
-						resultado.getString("email");
+						resultado.getString("dataNasc"),
+						resultado.getString("email"));
 				
 				Cliente c = new Cliente();
-				c.setIdCliente(resultado.getInt("id"));
+				c.setIdCliente(resultado.getInt("idCliente"));
 				c.setNome(resultado.getString("nome"));
 				c.setCpf(resultado.getString("cpf"));
 				c.setDataNasc(resultado.getString("dataNasc"));

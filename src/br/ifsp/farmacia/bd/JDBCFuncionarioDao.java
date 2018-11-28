@@ -56,7 +56,8 @@ public class JDBCFuncionarioDao implements FuncionarioDao {
 			System.out.println(" Resultados encontrados : \n");
 
 			while (resultado.next()) {
-				System.out.printf(" %s - %s\n", resultado.getString("nome"), resultado.getString("cargo"));
+				System.out.printf(" %s - %s\n",
+						resultado.getString("nome"), resultado.getString("cargo"));
 
 				/**
 				 * Guarda os dados do resultado e guarda em um cliente

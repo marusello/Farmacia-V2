@@ -151,7 +151,7 @@ public class CadastroMedicamentosUI{
 		
 		
 		CadastrarMedicamentoCtrl cm = new CadastrarMedicamentoCtrl();
-		ArrayList<Medicamento> listaMedicamento = cm.obterMedicamentos();
+		ArrayList<Medicamento> listaMedicamento = cm.obterMedicamento();
 		
 		String[] colunas = new String []{"ID","Nome", "Descricao"};
 				

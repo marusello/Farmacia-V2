@@ -39,7 +39,7 @@ public class JDBCMedicamentoDao implements MedicamentoDao {
 	}
 
 	@Override
-	public ArrayList<Medicamento> obterMedicamentos() {
+	public ArrayList<Medicamento> obterMedicamento() {
 		
 		try {
 			
@@ -58,13 +58,13 @@ public class JDBCMedicamentoDao implements MedicamentoDao {
 			System.out.println(" Resultados encontrados: \n" );
 			
 			while (resultado.next()) {
-				System.out.printf("%d : %s - %s - %s - %s - %.2f \n",
+				System.out.printf("%d : %s - %s - %s - %s  \n",
 					resultado.getInt("id_medicamento"),
 					resultado.getString("nome"),
 					resultado.getBoolean("estado"),
 					resultado.getString("descricao"),
-					resultado.getString("codBarras"),
-					resultado.getDouble("valorUnit"));
+					resultado.getString("codBarras"));
+					//resultado.getDouble("valorUnit"));
 				
 				Medicamento m = new Medicamento();
 				m.setId_medicamento(resultado.getInt("id_medicamento"));
@@ -72,7 +72,7 @@ public class JDBCMedicamentoDao implements MedicamentoDao {
 				m.setStatus(resultado.getBoolean("estado"));
 				m.setDescricao_medicamento(resultado.getString("descricao"));
 				m.setNumeracao_medicamento(resultado.getString("codBarras"));
-				m.setValor_unit(resultado.getDouble("valorUnit"));
+				//m.setValor_unit(resultado.getDouble("valorUnit"));
 				
 				listaMedicamentos.add(m);
 			}
@@ -91,7 +91,7 @@ public class JDBCMedicamentoDao implements MedicamentoDao {
 
 	
 	@Override
-	public Medicamento obterMedicamento(int idMedicamento) {
+	public Medicamento obterMedicamentos(int idMedicamento) {
 		
 		try {
 			System.out.println("Abrindo conexao...");

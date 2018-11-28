@@ -17,9 +17,9 @@ public class CadastrarMedicamentoCtrl {
 		
 	}
 	
-	public ArrayList<Medicamento> obterMedicamentos(){
+	public ArrayList<Medicamento> obterMedicamento(){
 		
 	MedicamentoDao med = new JDBCMedicamentoDao();
-		return med.obterMedicamentos();
+		return med.obterMedicamento();
 	}
 }

@@ -2,8 +2,10 @@ package br.ifsp.farmacia.bd;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import br.ifsp.farmacia.modelo.Medicamento;
 import br.ifsp.farmacia.modelo.Venda;
 
 public class JDBCVendaDao implements VendaDao {
@@ -39,8 +41,51 @@ public class JDBCVendaDao implements VendaDao {
 
 	@Override
 	public ArrayList<Venda> obterVenda() {
-		return null;
-	}
+		
+		try {
+			
+			System.out.println("Abrindo conexao...");
+			Connection conexao = ConnectionFactory.createConnection();
+			
+			String sql = "SELECT * FROM venda;";
+			
+			PreparedStatement comando = conexao.prepareStatement(sql);
+			
+			System.out.println("Executando comando...");
+			ResultSet resultado = comando.executeQuery();
+			
+			ArrayList<Venda> listaVendas = new ArrayList<Venda>();
+			
+			System.out.println(" Resultados encontrados: \n" );
+			
+			while (resultado.next()) {
+				System.out.printf("%d : %d - %.2f - %.2f  \n",
+					resultado.getInt("codVenda"),
+					resultado.getInt("quantidade"),
+					resultado.getDouble("subTotal"),
+					resultado.getDouble("valortotal"));				
+				
+				Venda v = new Venda();
+				v.setCodVenda(resultado.getInt("codVenda"));
+				v.setQuantidade(resultado.getInt("quantidade"));
+				v.setSubTotal(resultado.getDouble("subTotal"));
+				v.setValorTotal(resultado.getDouble("valortotal"));
+				
+				listaVendas.add(v);
+			}
+			
+			System.out.println("\n Fechando conexao...");
+			conexao.close();
+			
+			return listaVendas;
+		}
+		
+		catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	} 
+	
 
 	@Override
 	public Venda obterVenda(int idVenda) {
