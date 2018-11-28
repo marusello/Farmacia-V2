@@ -8,4 +8,5 @@ public interface EstoqueDao {
 	public void gravaEstoque(Estoque estoque);
 	public ArrayList<Estoque> obterEstoque();
 	public Estoque obterEstoque (int idLote);
+	public void AtualizarEstoque(Estoque estoque);
 }
